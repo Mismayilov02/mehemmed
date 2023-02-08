@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.master.mehemmedisma.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_createAccount"
+            app:destination="@id/createAccount" />
+    </fragment>
+    <fragment
+        android:id="@+id/createAccount"
+        android:name="com.master.mehemmedisma.CreateAccount"
+        android:label="fragment_create_account"
+        tools:layout="@layout/fragment_create_account" >
+        <action
+            android:id="@+id/action_createAccount_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="sdrg" />
+    </fragment>
+</navigation>
